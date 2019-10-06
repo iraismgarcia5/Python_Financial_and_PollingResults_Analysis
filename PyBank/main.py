@@ -38,10 +38,37 @@ with open(csvpath, newline="") as csvfile:
     min_increase_month = total_months_l[avg_change_l.index(min_increase)+1]
 
 
-    print(str(total_months))
-    print(str(total))
-    print(str(avg_change))
-    print(max_increase)
-    print(min_increase)
-    print(max_increase_month)
-    print(min_increase_month)
+    print("Financial Analysis")
+
+    # print(str(total_months))
+    # print(str(total))
+    # print(str(avg_change))
+    # print(max_increase)
+    # print(min_increase)
+    # print(max_increase_month)
+    # print(min_increase_month)
+
+    print("----------------------------")
+    print(f"Total Months: {total_months}")
+    print(f"Total: ${total}")
+    print(f"Average  Change: ${round(avg_change,2)}")
+    print(f"Greatest Increase in Profits: {max_increase_month} (${max_increase})")
+    print(f"Greatest Decrease in Profits: {min_increase_month} (${min_increase})")
+
+    file = open("results.txt","w")
+
+    file.write("Financial Analysis" + "\n")
+    file.write("----------------------------" + "\n")
+    file.write(f"Total Months: {total_months}")
+    file.write("\n")
+    file.write(f"Total: ${total}")
+    file.write("\n")
+    file.write(f"Average  Change: ${round(avg_change,2)}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {max_increase_month} (${max_increase})")
+    file.write("\n")
+    file.write(f"Greatest Decrease in Profits: {min_increase_month} (${min_increase})")
+    file.close()
+
+
+
