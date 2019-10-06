@@ -12,7 +12,7 @@ avg_change_l = []
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
-    print(csvreader)
+    # print(csvreader)
 
     for row in csvreader:
         
@@ -55,20 +55,18 @@ with open(csvpath, newline="") as csvfile:
     print(f"Greatest Increase in Profits: {max_increase_month} (${max_increase})")
     print(f"Greatest Decrease in Profits: {min_increase_month} (${min_increase})")
 
-    file = open("results.txt","w")
+results = os.path.join("C:\\Users\\irais\\OneDrive\\Desktop\\python-challenge\\PyBank\\results.txt")
 
-    file.write("Financial Analysis" + "\n")
-    file.write("----------------------------" + "\n")
-    file.write(f"Total Months: {total_months}")
-    file.write("\n")
-    file.write(f"Total: ${total}")
-    file.write("\n")
-    file.write(f"Average  Change: ${round(avg_change,2)}")
-    file.write("\n")
-    file.write(f"Greatest Increase in Profits: {max_increase_month} (${max_increase})")
-    file.write("\n")
-    file.write(f"Greatest Decrease in Profits: {min_increase_month} (${min_increase})")
-    file.close()
+with open(results,"w") as file:
+
+    file.write("Financial Analysis\n")
+    file.write("----------------------------\n")
+    file.write(f"Total Months: {total_months}\n")
+    file.write(f"Total: ${total}\n")
+    file.write(f"Average  Change: ${round(avg_change,2)}\n")
+    file.write(f"Greatest Increase in Profits: {max_increase_month} (${max_increase})\n")
+    file.write(f"Greatest Decrease in Profits: {min_increase_month} (${min_increase})\n")
+
 
 
 
